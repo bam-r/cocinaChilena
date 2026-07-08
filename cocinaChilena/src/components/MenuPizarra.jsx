@@ -1,9 +1,16 @@
-import { PlatoCard } from "./PlatoCard";
+import { PlatoCard } from './PlatoCard';
 
-export const MenuPizarra = () => {
+export const MenuPizarra = ({ menu, onEliminar, onEditarPrecio }) => {
     return (
         <div className="menu-pizarra">
-            {PlatoCard.map}
+            {menu.map((plato) => (
+                <PlatoCard
+                    key={plato.idMeal}
+                    plato={plato}
+                    onEliminar={onEliminar}
+                    onEditarPrecio={onEditarPrecio}
+                />
+            ))}
         </div>
     );
-}
+};
